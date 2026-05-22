@@ -1,0 +1,2291 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portfolio | Ahmad Alahmadi</title>
+
+    <style>
+        :root {
+            --primary: #0f766e;
+            --primary-dark: #115e59;
+            --secondary: #64748b;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --accent: #14b8a6;
+            --success: #10b981;
+            --danger: #ef4444;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #eef6f5;
+            color: #333;
+            line-height: 1.7;
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #134e4a, #0f766e);
+            color: white;
+            padding: 60px 30px;
+            border-radius: 18px;
+            margin-top: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.7rem;
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+		.contact-card{
+    text-decoration:none;
+    color:inherit;
+    transition:0.3s ease;
+}
+
+.contact-card .card{
+    transition:0.3s ease;
+    cursor:pointer;
+}
+
+.contact-card .card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 10px 25px rgba(15,118,110,0.18);
+    border:1px solid #0f766e;
+}
+
+        .tagline {
+            margin-top: 20px;
+            display: inline-block;
+            background: white;
+            color: var(--primary);
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: bold;
+        }
+
+        nav {
+            margin-top: 35px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 10px 18px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: rgba(255,255,255,0.15);
+        }
+
+        section {
+            background: white;
+            margin: 30px 0;
+            padding: 40px;
+            border-radius: 18px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        section h2 {
+            margin-bottom: 25px;
+            color: var(--primary);
+            font-size: 2rem;
+        }
+
+        section h3 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #f8fafc;
+            border: 1px solid #dbe4ea;
+            padding: 25px;
+            border-radius: 14px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 0.9rem;
+        }
+
+        .badge.accent {
+            background: var(--accent);
+        }
+
+        .photo-placeholder {
+            width: 210px;
+            height: 210px;
+            border-radius: 50%;
+            border: 5px dashed var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+            background: #f1f5f9;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        .stats-bar {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .stat-item {
+            background: var(--dark);
+            color: white;
+            padding: 12px 22px;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        .evidence-card {
+            border-left: 6px solid var(--primary);
+            background: #f8fafc;
+            margin-top: 25px;
+        }
+
+        .week-badge {
+            background: var(--primary);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .topic {
+            color: var(--secondary);
+            font-style: italic;
+        }
+
+        .evidence-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 15px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .reflection-card {
+            background: linear-gradient(to right,#f8fafc,#f1f5f9);
+            border-left: 5px solid var(--accent);
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 25px;
+        }
+
+        .reflection-card blockquote {
+            margin-top: 15px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--secondary);
+        }
+
+        .himma-badge {
+            display: inline-block;
+            background: var(--dark);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            margin-bottom: 20px;
+        }
+
+        @media(max-width:768px){
+            section{
+                padding:25px;
+            }
+
+            header h1{
+                font-size:2rem;
+            }
+
+            .stats-bar{
+                flex-direction:column;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <h1>Portfolio | Ahmad Alahmadi</h1>
+
+    <p class="subtitle">
+        CPIT-455 Software Engineering II · HIMMA Curriculum
+    </p>
+
+    <div class="tagline">
+        ⚡ Learning • Evidence • Engineering
+    </div>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#evidence">Evidence</a>
+        <a href="#reflection">Reflection</a>
+        <a href="#tools-used">Tools</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+</header>
+
+<section id="about">
+
+    <h2>👤 About Me</h2>
+
+    <div class="grid">
+
+        <div>
+
+            <p>
+                My name is Ahmad Alahmadi and I am an Information Technology student at King Abdulaziz University,
+                currently enrolled in <strong>CPIT-455 Software Engineering II</strong>
+                under the HIMMA curriculum.
+            </p>
+
+            <p>
+                My goal is to develop a deeper understanding of dependable software systems
+                and learn how engineers design reliable, secure, and safe applications
+                used in real-world environments.
+            </p>
+
+            <p>
+                This portfolio documents my progress throughout the semester and highlights
+                the concepts, reflections, and engineering knowledge I gained during the course.
+            </p>
+
+            <div class="stats-bar">
+                <div class="stat-item">16 Weeks</div>
+                <div class="stat-item">V2 Iteration</div>
+                <div class="stat-item">3 Lectures/Week</div>
+                <div class="stat-item">1 Project</div>
+            </div>
+
+            <h3>🎓 Academic Information</h3>
+
+            <ul>
+                <li><strong>University:</strong> King Abdulaziz University</li>
+                <li><strong>Major:</strong> Information Technology</li>
+                <li><strong>Year:</strong> 2026 — Semester 2</li>
+                <li><strong>Course:</strong> CPIT-455 Software Engineering II</li>
+                <li><strong>Domain Focus:</strong> Dependable Systems & Safety-Critical Design</li>
+            </ul>
+
+            <h3>💡 Interest Area</h3>
+
+            <div class="card">
+
+                <p><strong>Interested in:</strong></p>
+
+                <div style="margin-top:10px;">
+                    <span class="badge">System Reliability</span>
+                    <span class="badge">Cybersecurity</span>
+                    <span class="badge">Software Engineering</span>
+                    <span class="badge accent">Artificial Intelligence</span>
+                </div>
+
+                <p style="margin-top:20px;">
+                    <strong>Purpose of This Portfolio:</strong><br>
+                    Track learning progress and document understanding of
+                    Software Engineering concepts.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div>
+
+            <div class="photo-placeholder">
+			
+    <img src="mypic2.JPEG"
+         alt="Profile Picture"
+         style="
+            width:125%;
+            height:125%;
+            object-fit:cover;
+            border-radius:50%;
+         ">
+            </div>
+
+            <h3 style="margin-top:25px;">🛠 Technical Skills</h3>
+
+            <div>
+                <span class="badge">Software Architecture</span>
+                <span class="badge">Fault Tree Analysis</span>
+                <span class="badge">Risk Assessment</span>
+                <span class="badge">ALARP</span>
+                <span class="badge">Safety Engineering</span>
+                <span class="badge">Dependability</span>
+                <span class="badge">Python</span>
+                <span class="badge">Java</span>
+                <span class="badge">UML</span>
+                <span class="badge">V&V</span>
+                <span class="badge">System Design</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section>
+
+    <h2>🎯 Learning Goals</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>Software Engineering Concepts</h3>
+            <p>
+                Understand core Software Engineering concepts and their applications
+                in real systems.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>System Failures</h3>
+            <p>
+                Learn how real-world systems handle failures and maintain dependable operation.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Risk Analysis</h3>
+            <p>
+                Improve the ability to analyze software risks and vulnerabilities.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Safety Requirements</h3>
+            <p>
+                Learn how safety requirements are identified and applied in critical systems.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="evidence">
+
+    <h2>📂 Weekly Evidence</h2>
+
+    <p>
+        <em>
+            Each week in this course represented a new stage of learning and understanding.
+            The evidence collected in this portfolio reflects my progress,
+            reflections, and practical understanding of Software Engineering concepts.
+        </em>
+    </p>
+
+    <div class="card evidence-card">
+
+        <span class="week-badge">WEEK 01–02</span>
+
+        <h3>CLASS 00 · The HIMMA System</h3>
+
+        <p class="topic">
+            Topics: Evidence, Portfolio, Iteration
+        </p>
+
+        <div class="evidence-box">
+
+            <h4>My Evidence (V2)</h4>
+
+            <p>
+                I organized my portfolio structure and started documenting my goals for the semester. I began writing week by week to help me understand better.
+                This helped me understand the importance of building proof of learning instead of only focusing on grades.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="card evidence-card">
+
+        <span class="week-badge">WEEK 03–04</span>
+
+        <h3>CLASS 01 · Domain Spine: Dependability</h3>
+
+        <p class="topic">
+            Topics: Availability, Reliability, Safety, Security, Resilience
+        </p>
+
+<div class="evidence-box">
+
+    <h4 style="color:#0f766e;">🎯 ATM Dependability Analysis</h4>
+
+    <p>
+        This activity focused on analyzing the dependability of an ATM system
+        and understanding how different engineering principles work together
+        to ensure secure and reliable banking operations.
+    </p>
+
+    <hr style="margin:20px 0; border:1px solid #e2e8f0;">
+
+    <h4>🔹 Dependability Attributes</h4>
+
+    <ul>
+        <li>
+            <strong>Availability:</strong>
+            The ATM should operate continuously so customers can access services anytime.
+        </li>
+
+        <li>
+            <strong>Reliability:</strong>
+            Transactions must complete correctly without balance or withdrawal errors.
+        </li>
+
+        <li>
+            <strong>Safety:</strong>
+            The system should prevent financial loss and incorrect transaction behavior.
+        </li>
+
+        <li>
+            <strong>Security:</strong>
+            Customer information and PINs must remain encrypted and protected.
+        </li>
+
+        <li>
+            <strong>Maintainability:</strong>
+            Failures should be diagnosed and repaired quickly to reduce downtime.
+        </li>
+
+        <li>
+            <strong>Integrity:</strong>
+            Transaction records must remain accurate and protected from modification.
+        </li>
+    </ul>
+
+    <hr style="margin:20px 0; border:1px solid #e2e8f0;">
+
+    <h4>⚠️ Risk Identification</h4>
+
+    <div class="grid">
+
+        <div class="card">
+            <h4>Hardware Risks</h4>
+
+            <ul>
+                <li>Card reader malfunction</li>
+                <li>Cash dispenser jam</li>
+                <li>Power failure</li>
+                <li>Touchscreen or keypad damage</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h4>Software Risks</h4>
+
+            <ul>
+                <li>Transaction processing bugs</li>
+                <li>Operating system crashes</li>
+                <li>Database synchronization failures</li>
+                <li>Software update errors</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h4>Operational Risks</h4>
+
+            <ul>
+                <li>Incorrect technician configuration</li>
+                <li>Poor maintenance scheduling</li>
+                <li>Physical vandalism</li>
+                <li>Internet connectivity interruptions</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <hr style="margin:20px 0; border:1px solid #e2e8f0;">
+
+    <h4>🛡 Dependability Strategy</h4>
+
+    <div class="grid">
+
+        <div class="card">
+            <h4>Redundancy</h4>
+
+            <ul>
+                <li>Backup communication network</li>
+                <li>Duplicate banking servers</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h4>Testing</h4>
+
+            <ul>
+                <li>Unit testing for transactions</li>
+                <li>Integration testing with servers</li>
+                <li>Stress testing during peak usage</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h4>Security Protection</h4>
+
+            <ul>
+                <li>Encrypted communication</li>
+                <li>Firewall protection</li>
+                <li>Secure PIN encryption modules</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h4>Monitoring & Recovery</h4>
+
+            <ul>
+                <li>Real-time system monitoring</li>
+                <li>Automatic reboot after crashes</li>
+                <li>Transaction rollback mechanisms</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <hr style="margin:20px 0; border:1px solid #e2e8f0;">
+
+    <h4>📘 Learning Outcome</h4>
+
+    <p>
+        This task helped me understand that dependability extends beyond basic functionality.
+        Availability, reliability, security, and integrity work together
+        to build user trust in critical systems such as ATMs.
+    </p>
+
+    <h4>⚡ Challenges</h4>
+
+    <p>
+        At first, distinguishing between hardware, software,
+        and operational risks was difficult.
+        Breaking the ATM system into components helped clarify
+        how failures can originate from both technical and human factors.
+    </p>
+
+    <h4>💡 Key Insight</h4>
+
+    <p>
+        Failures cannot always be completely prevented,
+        but systems can be designed to tolerate them.
+        Redundancy and recovery mechanisms help maintain safe transactions
+        even during unexpected failures.
+    </p>
+
+    <h4>🌍 Real-World Connection</h4>
+
+    <p>
+        ATM systems are mission-critical banking systems where failures directly impact users financially.
+        Dependability engineering helps ensure continuous service,
+        secure transactions, and accurate financial operations.
+    </p>
+
+    <h4>✅ Conclusion</h4>
+
+    <p>
+        This activity demonstrated how structured risk analysis
+        and dependability strategies are essential
+        for designing secure and reliable real-world systems.
+    </p>
+
+</div>
+
+    </div>
+
+    <div class="card evidence-card">
+
+        <span class="week-badge">WEEK 05–06</span>
+
+        <h3>CLASS 02 · Reliability Engineering</h3>
+
+        <p class="topic">
+            Topics: Faults, Errors, Failures, Reliability Metrics
+        </p>
+
+ <div class="evidence-box">
+
+    <h4 style="color:#0f766e;">🚚 Uber Eats Delivery System Justification</h4>
+
+    <p>
+        This activity focused on analyzing the dependability requirements
+        of a real-world food delivery platform and understanding
+        how availability and scalable architecture support continuous service.
+    </p>
+
+    <hr style="margin:20px 0; border:1px solid #e2e8f0;">
+
+    <h4>🖼 System Diagram</h4>
+
+    <div style="text-align:center; margin-top:20px;">
+
+        <img src="delivery-diagram.JFIF"
+             alt="Uber Eats Delivery System Diagram"
+             style="width:100%; max-width:700px; border-radius:12px; border:2px solid #dbe4ea; box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+
+        <p style="margin-top:10px; color:#64748b; font-size:0.9rem;">
+            Figure: Delivery system architecture and workflow diagram.
+        </p>
+
+    </div>
+
+    <hr style="margin:25px 0; border:1px solid #e2e8f0;">
+
+    <h4>🌍 Real-World System: Uber Eats Food Delivery Platform</h4>
+
+    <p>
+        Uber Eats is used by three main groups:
+        customers, restaurants, and delivery drivers.
+        Customers browse menus, place orders, and track deliveries through the application,
+        while restaurants and drivers interact with the platform to complete the delivery process.
+    </p>
+
+    <p>
+        The system experiences dynamic traffic patterns,
+        especially during lunch hours, dinner hours, weekends,
+        and special events where thousands of requests may occur simultaneously.
+    </p>
+
+    <p>
+        Users expect fast response times, smooth checkout processes,
+        and real-time delivery tracking,
+        which makes system scalability and dependability extremely important.
+    </p>
+
+    <hr style="margin:25px 0; border:1px solid #e2e8f0;">
+
+    <h4>📊 Chosen Dependability Metric: Availability</h4>
+
+    <p>
+        Availability was selected as the most important dependability metric
+        because Uber Eats operates as an on-demand platform
+        where users expect immediate and continuous access.
+    </p>
+
+    <p>
+        If the system becomes unavailable,
+        customers cannot place orders,
+        restaurants lose sales opportunities,
+        and drivers lose delivery requests.
+    </p>
+
+    <p>
+        Measuring uptime percentage directly reflects both
+        user satisfaction and business performance.
+    </p>
+
+    <hr style="margin:25px 0; border:1px solid #e2e8f0;">
+
+    <h4>🏗 Proposed Dependability Strategy: Microservices Architecture</h4>
+
+    <div class="grid">
+
+        <div class="card">
+
+            <h4>Independent Services</h4>
+
+            <p>
+                Core functions such as ordering,
+                payment processing,
+                and delivery matching operate independently
+                instead of relying on one monolithic system.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h4>Failure Isolation</h4>
+
+            <p>
+                If one service temporarily fails,
+                other services can continue functioning normally,
+                reducing the impact on the entire platform.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h4>Scalability</h4>
+
+            <p>
+                Services can scale separately during peak traffic periods,
+                helping the platform maintain stable performance.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h4>Maintainability</h4>
+
+            <p>
+                Independent deployment allows developers
+                to update or repair services quickly
+                without shutting down the whole system.
+            </p>
+
+        </div>
+
+    </div>
+
+    <hr style="margin:25px 0; border:1px solid #e2e8f0;">
+
+    <h4>📘 Learning Outcome</h4>
+
+    <p>
+        This task helped me understand how software architecture decisions
+        directly affect system dependability, scalability, and user experience.
+    </p>
+
+    <h4>⚡ Challenges</h4>
+
+    <p>
+        One challenge was understanding why availability is prioritized
+        over other dependability metrics in food delivery systems.
+        Analyzing real-world usage patterns clarified the importance
+        of continuous service accessibility.
+    </p>
+
+    <h4>💡 Key Insight</h4>
+
+    <p>
+        Modern large-scale applications rely heavily on distributed architectures
+        because they improve fault tolerance and scalability.
+    </p>
+
+    <h4>🌍 Real-World Connection</h4>
+
+    <p>
+        Platforms such as Uber Eats must maintain high availability
+        because even short periods of downtime can directly impact revenue,
+        customer trust, and operational efficiency.
+    </p>
+
+</div>
+
+    </div>
+	
+<!-- WEEK 07-08 -->
+<div class="card evidence-card">
+
+    <span class="week-badge">WEEK 07–08</span>
+
+    <h3>CLASS 03 · Safety Engineering</h3>
+
+    <p class="topic">
+        Topics: Hazard Analysis, ALARP, Fault Tree Analysis, Safety Cases
+    </p>
+
+<div class="evidence-box">
+
+    <h4 style="color:#0f766e;">💉 Insulin Pump Safety Argument</h4>
+
+    <p>
+        This activity focused on analyzing safety risks in a medical insulin pump system
+        and understanding how safety requirements help prevent dangerous system behavior.
+    </p>
+
+    <hr style="margin:20px 0; border:1px solid #e2e8f0;">
+
+    <h4>🏥 System Overview</h4>
+
+    <div class="card">
+
+        <h4>Insulin Pump Dose Delivery Controller</h4>
+
+        <p>
+            An insulin pump automatically delivers insulin doses to diabetic patients
+            based on programmed dosage settings and sensor readings.
+        </p>
+
+        <p>
+            Since insulin directly affects blood glucose levels,
+            any system failure may create severe medical risks for patients.
+        </p>
+
+    </div>
+
+    <hr style="margin:25px 0; border:1px solid #e2e8f0;">
+
+    <h4>⚠️ Hazard Identification</h4>
+
+    <div class="card">
+
+        <h4>Hazard: Insulin Overdose</h4>
+
+        <p>
+            The system may deliver insulin beyond the medically safe limit,
+            causing severe hypoglycemia which can lead to
+            brain damage or even death.
+        </p>
+
+        <p>
+            This hazard directly threatens patient safety
+            because insulin impacts blood glucose levels immediately.
+        </p>
+
+    </div>
+
+    <hr style="margin:25px 0; border:1px solid #e2e8f0;">
+
+    <h4>📊 Risk Assessment Matrix</h4>
+
+    <div style="overflow-x:auto;">
+
+        <table style="width:100%; border-collapse:collapse; margin-top:15px;">
+
+            <tr style="background:#0f766e; color:white;">
+
+                <th style="padding:12px; border:1px solid #dbe4ea;">Hazard</th>
+                <th style="padding:12px; border:1px solid #dbe4ea;">Probability</th>
+                <th style="padding:12px; border:1px solid #dbe4ea;">Severity</th>
+                <th style="padding:12px; border:1px solid #dbe4ea;">Risk Level</th>
+                <th style="padding:12px; border:1px solid #dbe4ea;">Verdict</th>
+
+            </tr>
+
+            <tr style="background:white;">
+
+                <td style="padding:12px; border:1px solid #dbe4ea;">
+                    Insulin Overdose
+                </td>
+
+                <td style="padding:12px; border:1px solid #dbe4ea;">
+                    Medium
+                </td>
+
+                <td style="padding:12px; border:1px solid #dbe4ea;">
+                    Catastrophic
+                </td>
+
+                <td style="padding:12px; border:1px solid #dbe4ea;">
+                    High
+                </td>
+
+                <td style="padding:12px; border:1px solid #dbe4ea; color:#dc2626; font-weight:bold;">
+                    Intolerable
+                </td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+    <div style="margin-top:20px;">
+
+        <h4>📝 Explanation</h4>
+
+        <ul>
+            <li>
+                <strong>Probability:</strong>
+                Sensor or software failures are uncommon but still possible.
+            </li>
+
+            <li>
+                <strong>Severity:</strong>
+                Extremely dangerous because overdose may become fatal.
+            </li>
+
+            <li>
+                <strong>Risk Level:</strong>
+                High-risk situations require strict preventive safety mechanisms.
+            </li>
+        </ul>
+
+    </div>
+
+    <hr style="margin:25px 0; border:1px solid #e2e8f0;">
+
+    <h4>🛡 Safety Requirement</h4>
+
+    <div class="card" style="border-left:5px solid #ef4444;">
+
+        <p style="font-weight:bold; color:#b91c1c;">
+            SR1: The system shall not deliver an insulin dose
+            exceeding the medically configured maximum limit
+            under any operating condition.
+        </p>
+
+    </div>
+
+    <p style="margin-top:15px;">
+
+        <strong>Justification:</strong>
+        Functional requirements define what a system should do,
+        while safety requirements define what a system must never do
+        in order to protect users from harm.
+
+    </p>
+
+    <hr style="margin:25px 0; border:1px solid #e2e8f0;">
+
+    <h4>📘 Learning Outcome</h4>
+
+    <p>
+        This activity helped me understand the importance of safety engineering
+        in medical and safety-critical systems where failures can directly affect human lives.
+    </p>
+
+    <h4>⚡ Challenges</h4>
+
+    <p>
+        One challenge was distinguishing between normal functional requirements
+        and safety requirements. I learned that safety requirements focus specifically
+        on preventing dangerous outcomes.
+    </p>
+
+    <h4>💡 Key Insight</h4>
+
+    <p>
+        Even highly reliable systems can still be unsafe if dangerous failures
+        are not properly controlled through safety requirements and risk analysis.
+    </p>
+
+    <h4>🌍 Real-World Connection</h4>
+
+    <p>
+        Medical systems such as insulin pumps require extremely strict safety controls
+        because software failures may lead to severe injury or death.
+    </p>
+
+</div>
+
+</div>
+
+<!-- WEEK 09-10 -->
+<div class="card evidence-card">
+
+    <span class="week-badge">WEEK 09–10</span>
+
+    <h3>Security & Resilience and Software Reuse</h3>
+
+    <p class="topic">
+        Topics: Security Engineering, Resilience Strategies, Software Reuse
+    </p>
+
+<div class="evidence-box">
+
+    <h4 style="color:#0f766e;">🛡 Security, Resilience Engineering & Software Reuse</h4>
+
+    <p>
+        This phase focused on understanding how modern software systems
+        remain secure, resilient, and maintainable even during failures,
+        cyberattacks, and unexpected operational conditions.
+    </p>
+
+    <p>
+        I also learned how software reuse techniques help organizations
+        accelerate development while improving system dependability and reducing costs.
+    </p>
+
+    <hr style="margin:25px 0; border:1px solid #e2e8f0;">
+
+    <h4>🔐 Security & Resilience Engineering</h4>
+
+    <div class="grid">
+
+        <div class="card">
+
+            <h4>Security Engineering</h4>
+
+            <p>
+                Security engineering focuses on protecting systems
+                from unauthorized access, attacks, and data breaches.
+                Reliable security mechanisms are essential
+                for protecting user trust and sensitive information.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h4>Resilience Engineering</h4>
+
+            <p>
+                Resilience engineering focuses on designing systems
+                that continue operating even during failures,
+                disruptions, or cyberattacks.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h4>Human-in-the-Loop Systems</h4>
+
+            <p>
+                Human operators supervise AI systems
+                and intervene when necessary,
+                ensuring human oversight in critical situations.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h4>Explainable AI (XAI)</h4>
+
+            <p>
+                Explainable AI improves transparency in AI decision-making,
+                helping engineers identify issues
+                and increase trust in intelligent systems.
+            </p>
+
+        </div>
+
+    </div>
+
+    <hr style="margin:25px 0; border:1px solid #e2e8f0;">
+
+    <h4>📈 Industry Trends in Resilience Engineering</h4>
+
+    <div class="grid">
+
+        <div class="card">
+
+            <h4>Chaos Engineering</h4>
+
+            <p>
+                Companies such as Netflix intentionally introduce failures
+                into systems to test resilience and recovery capabilities.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h4>Microservices Architecture</h4>
+
+            <p>
+                Organizations like Amazon use microservices
+                to isolate failures and improve scalability and recovery.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h4>Cloud Computing</h4>
+
+            <p>
+                Cloud platforms provide built-in resilience features
+                such as redundancy, backup systems,
+                and disaster recovery mechanisms.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h4>AIOps</h4>
+
+            <p>
+                AI for IT Operations automates monitoring
+                and incident response,
+                improving operational resilience and recovery speed.
+            </p>
+
+        </div>
+
+    </div>
+
+    <hr style="margin:25px 0; border:1px solid #e2e8f0;">
+
+    <h4>♻️ Software Reuse</h4>
+
+    <p>
+        Software reuse is the process of using existing software components,
+        frameworks, services, or applications
+        to build new systems more efficiently.
+    </p>
+
+    <div class="grid">
+
+        <div class="card">
+
+            <h4>Benefits</h4>
+
+            <ul>
+                <li>Faster development time</li>
+                <li>Lower development costs</li>
+                <li>Reduced project risks</li>
+                <li>Improved dependability</li>
+                <li>Better standards compliance</li>
+            </ul>
+
+        </div>
+
+        <div class="card">
+
+            <h4>Challenges</h4>
+
+            <ul>
+                <li>Component adaptation difficulties</li>
+                <li>Maintenance complexity</li>
+                <li>Lack of tool support</li>
+                <li>Compatibility issues</li>
+                <li>Not-Invented-Here syndrome</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <hr style="margin:25px 0; border:1px solid #e2e8f0;">
+
+    <h4>🚀 Software Reuse Approaches</h4>
+
+    <div class="grid">
+
+        <div class="card">
+
+            <h4>Application Frameworks</h4>
+
+            <p>
+                Frameworks provide reusable architectures
+                that support system development through predefined components,
+                security support, and database integration.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h4>Software Product Lines</h4>
+
+            <p>
+                Product lines allow organizations
+                to build multiple related applications
+                using a shared architecture and reusable components.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h4>Application System Reuse</h4>
+
+            <p>
+                Existing large-scale systems can be adapted
+                and configured for new customers
+                without changing the entire source code.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h4>AI-Based Reuse</h4>
+
+            <p>
+                Modern AI tools help identify reusable code,
+                reusable AI models,
+                and reusable software components automatically.
+            </p>
+
+        </div>
+
+    </div>
+
+    <hr style="margin:25px 0; border:1px solid #e2e8f0;">
+
+    <h4>⚠️ Real-World Reuse Failure Example</h4>
+
+    <div class="card" style="border-left:5px solid #ef4444;">
+
+        <h4>Ariane 5 Rocket Failure</h4>
+
+        <p>
+            The Ariane 5 rocket failed because software reused
+            from the Ariane 4 rocket
+            could not handle the new system’s higher speed,
+            causing an overflow error.
+        </p>
+
+        <p>
+            This example showed that reused software
+            must always be carefully validated
+            before deployment in new environments.
+        </p>
+
+    </div>
+
+    <hr style="margin:25px 0; border:1px solid #e2e8f0;">
+
+    <h4>📘 Learning Outcome</h4>
+
+    <p>
+        This topic helped me understand how resilience,
+        security, and software reuse
+        are connected in modern software engineering.
+    </p>
+
+    <h4>⚡ Challenges</h4>
+
+    <p>
+        One challenge was understanding
+        how reused components can improve development speed
+        while also introducing compatibility and maintenance risks.
+    </p>
+
+    <h4>💡 Key Insight</h4>
+
+    <p>
+        Dependable systems are not only secure,
+        but also resilient enough
+        to continue operating during unexpected failures and disruptions.
+    </p>
+
+    <h4>🌍 Real-World Connection</h4>
+
+    <p>
+        Modern companies such as Netflix, Amazon, Microsoft, and Google
+        rely heavily on resilience engineering,
+        cloud systems,
+        and reusable architectures
+        to maintain reliable large-scale services.
+    </p>
+
+</div>
+
+</div>
+
+<!-- WEEK 11-12 -->
+<div class="card evidence-card">
+
+    <span class="week-badge">WEEK 11–12</span>
+
+    <h3>Distributed Systems & Architecture</h3>
+
+    <p class="topic">
+        Topics: Distributed Systems, Component-Based Software Engineering
+    </p>
+
+<div class="evidence-box">
+
+    <h4 style="color:#0f766e;">🧩 Component-Based & Distributed Software Engineering</h4>
+
+    <p>
+        This phase focused on understanding how modern software systems
+        are built using reusable components and distributed architectures
+        to improve scalability, flexibility, reliability, and maintainability.
+    </p>
+
+    <p>
+        I learned how large systems are separated into smaller independent modules,
+        services, and distributed nodes that work together
+        while remaining scalable and fault tolerant.
+    </p>
+
+    <hr style="margin:25px 0; border:1px solid #e2e8f0;">
+
+    <h4>🧩 Component-Based Software Engineering (CBSE)</h4>
+
+    <div class="grid">
+
+        <div class="card">
+
+            <h4>Core Idea</h4>
+
+            <p>
+                Component-Based Software Engineering focuses on building systems
+                using reusable software components
+                instead of developing everything from scratch.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h4>Benefits</h4>
+
+            <ul>
+                <li>Faster development</li>
+                <li>Reduced costs</li>
+                <li>Improved maintainability</li>
+                <li>Better software reuse</li>
+                <li>Higher development efficiency</li>
+            </ul>
+
+        </div>
+
+        <div class="card">
+
+            <h4>Component Validation</h4>
+
+            <p>
+                Components must be validated carefully
+                to ensure compatibility,
+                correct functionality,
+                and protection against malicious behavior.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h4>Trust Issues</h4>
+
+            <p>
+                Engineers must ensure component suppliers are trustworthy
+                because reused components may introduce security risks
+                or unwanted functionality.
+            </p>
+
+        </div>
+
+    </div>
+
+    <hr style="margin:25px 0; border:1px solid #e2e8f0;">
+
+    <h4>⚙️ Component Composition</h4>
+
+    <p>
+        Component composition is the process of combining components
+        to create complete software systems.
+    </p>
+
+    <div class="grid">
+
+        <div class="card">
+
+            <h4>Sequential Composition</h4>
+
+            <p>
+                Components execute in sequence.
+                Example: Product selection → payment → checkout.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h4>Hierarchical Composition</h4>
+
+            <p>
+                One component uses services provided by another component
+                within the system hierarchy.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h4>Additive Composition</h4>
+
+            <p>
+                Multiple interfaces combine together
+                to create a larger integrated component.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h4>Glue Code & Adaptors</h4>
+
+            <p>
+                Glue code and adaptor components resolve incompatibilities
+                between components that use different formats or interfaces.
+            </p>
+
+        </div>
+
+    </div>
+
+    <hr style="margin:25px 0; border:1px solid #e2e8f0;">
+
+    <h4>🌐 Distributed Software Engineering</h4>
+
+    <p>
+        Distributed software systems consist of multiple independent computers
+        connected through networks that work together as one system.
+    </p>
+
+    <div class="grid">
+
+        <div class="card">
+
+            <h4>Transparency</h4>
+
+            <p>
+                Users should not notice that the system
+                is distributed across multiple machines or locations.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h4>Scalability</h4>
+
+            <p>
+                Distributed systems must handle increasing workloads
+                and users efficiently without major performance loss.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h4>Fault Tolerance</h4>
+
+            <p>
+                The system should continue functioning
+                even when individual nodes or services fail.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h4>Concurrency</h4>
+
+            <p>
+                Multiple operations can execute simultaneously
+                across different nodes,
+                improving performance and efficiency.
+            </p>
+
+        </div>
+
+    </div>
+
+    <hr style="margin:25px 0; border:1px solid #e2e8f0;">
+
+    <h4>🏗 Distributed Architecture Patterns</h4>
+
+    <div class="grid">
+
+        <div class="card">
+
+            <h4>Client–Server Architecture</h4>
+
+            <p>
+                Clients request services from centralized servers.
+                Common in web applications,
+                online banking,
+                and cloud services.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h4>Multi-Tier Architecture</h4>
+
+            <p>
+                Systems are divided into layers
+                such as presentation,
+                application,
+                and database layers
+                to improve scalability and organization.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h4>Peer-to-Peer Systems</h4>
+
+            <p>
+                Nodes share resources directly without centralized control,
+                improving decentralization and resource sharing.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h4>Distributed Components</h4>
+
+            <p>
+                Components can be deployed independently
+                across different servers and locations,
+                supporting flexible scaling and maintenance.
+            </p>
+
+        </div>
+
+    </div>
+
+    <hr style="margin:25px 0; border:1px solid #e2e8f0;">
+
+    <h4>☁️ Modern Distributed Technologies</h4>
+
+    <div class="grid">
+
+        <div class="card">
+
+            <h4>Cloud Computing</h4>
+
+            <p>
+                Cloud platforms provide scalable infrastructure,
+                redundancy,
+                and on-demand resources for distributed systems.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h4>Software as a Service (SaaS)</h4>
+
+            <p>
+                Applications are delivered over the Internet
+                without requiring local installation or maintenance.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h4>Service-Oriented Architecture (SOA)</h4>
+
+            <p>
+                Systems are structured as independent stateless services
+                that communicate through standard protocols.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h4>AI & Distributed Systems</h4>
+
+            <p>
+                Distributed computing is essential
+                for training and deploying large AI models
+                that require massive computational resources.
+            </p>
+
+        </div>
+
+    </div>
+
+    <hr style="margin:25px 0; border:1px solid #e2e8f0;">
+
+    <h4>⚠️ Challenges in Distributed Systems</h4>
+
+    <div class="card" style="border-left:5px solid #ef4444;">
+
+        <ul>
+            <li>Lack of centralized control</li>
+            <li>Unpredictable network behavior</li>
+            <li>Complex fault recovery</li>
+            <li>Security risks across connected systems</li>
+            <li>Scalability and synchronization difficulties</li>
+        </ul>
+
+    </div>
+
+    <hr style="margin:25px 0; border:1px solid #e2e8f0;">
+
+    <h4>📘 Learning Outcome</h4>
+
+    <p>
+        This topic helped me understand how modern large-scale applications
+        are built using reusable components
+        and distributed architectures
+        to improve flexibility, scalability, and reliability.
+    </p>
+
+    <h4>⚡ Challenges</h4>
+
+    <p>
+        One challenge was understanding
+        how distributed systems maintain communication
+        and synchronization between independent nodes and services.
+    </p>
+
+    <h4>💡 Key Insight</h4>
+
+    <p>
+        Large software systems become more manageable
+        when divided into reusable components
+        and distributed services that can scale independently.
+    </p>
+
+    <h4>🌍 Real-World Connection</h4>
+
+    <p>
+        Modern companies such as Amazon, Google, Netflix, and Microsoft
+        rely heavily on distributed architectures,
+        cloud systems,
+        and reusable software components
+        to support millions of users worldwide.
+    </p>
+
+</div>
+
+</div>
+
+<!-- WEEK 13-14 -->
+<div class="card evidence-card">
+
+    <span class="week-badge">WEEK 13–14</span>
+
+    <h3>Systems of Systems SOS</h3>
+
+    <p class="topic">
+        Topics: Systems of Systems, Verification & Validation
+    </p>
+
+<div class="evidence-box">
+
+    <h4 style="color:#0f766e;">🚨 Systems of Systems (SoS) Engineering</h4>
+
+    <p>
+        This activity focused on understanding how independently managed systems
+        collaborate together to achieve larger organizational goals,
+        and the engineering challenges involved
+        when centralized control does not fully exist.
+    </p>
+
+    <p>
+        I learned how Systems of Systems (SoS) differ from traditional monolithic systems
+        and why integration, communication,
+        and resilience become critical in large-scale environments.
+    </p>
+
+    <hr style="margin:25px 0; border:1px solid #e2e8f0;">
+
+    <h4>🌍 Real-World System: Jeddah Smart City Emergency Command Center</h4>
+
+    <div class="card">
+
+        <h4>911 Emergency Dispatch Integration</h4>
+
+        <p>
+            The emergency command center integrates multiple independent systems across Jeddah
+            to coordinate emergency response operations more efficiently.
+        </p>
+
+        <ul>
+            <li>
+                <strong>Police CAD Systems:</strong>
+                Managed by local law enforcement agencies.
+            </li>
+
+            <li>
+                <strong>Hospital Information Systems:</strong>
+                Used to track emergency room capacity and bed availability.
+            </li>
+
+            <li>
+                <strong>Traffic Control Networks:</strong>
+                Managed by the municipality to control traffic lights and monitoring cameras.
+            </li>
+        </ul>
+
+        <p>
+            Each subsystem operates independently with its own management,
+            funding, and operational goals,
+            but they collaborate during emergencies
+            to improve ambulance routing and emergency response times.
+        </p>
+
+    </div>
+
+    <hr style="margin:25px 0; border:1px solid #e2e8f0;">
+
+    <h4>📊 Systems Comparison Matrix</h4>
+
+    <div style="overflow-x:auto;">
+
+        <table style="width:100%; border-collapse:collapse; margin-top:15px;">
+
+            <tr style="background:#0f766e; color:white;">
+
+                <th style="padding:12px; border:1px solid #dbe4ea;">
+                    Characteristic
+                </th>
+
+                <th style="padding:12px; border:1px solid #dbe4ea;">
+                    Monolithic System
+                </th>
+
+                <th style="padding:12px; border:1px solid #dbe4ea;">
+                    System of Systems (SoS)
+                </th>
+
+                <th style="padding:12px; border:1px solid #dbe4ea;">
+                    Notes
+                </th>
+
+            </tr>
+
+            <tr>
+
+                <td style="padding:12px; border:1px solid #dbe4ea;">
+                    Control
+                </td>
+
+                <td style="padding:12px; border:1px solid #dbe4ea;">
+                    Centralized
+                </td>
+
+                <td style="padding:12px; border:1px solid #dbe4ea;">
+                    Managerial Independence
+                </td>
+
+                <td style="padding:12px; border:1px solid #dbe4ea;">
+                    Each system has separate ownership and funding.
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td style="padding:12px; border:1px solid #dbe4ea;">
+                    Functionality
+                </td>
+
+                <td style="padding:12px; border:1px solid #dbe4ea;">
+                    Unified Purpose
+                </td>
+
+                <td style="padding:12px; border:1px solid #dbe4ea;">
+                    Operational Independence
+                </td>
+
+                <td style="padding:12px; border:1px solid #dbe4ea;">
+                    Components continue operating independently even if the SoS fails.
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td style="padding:12px; border:1px solid #dbe4ea;">
+                    Development
+                </td>
+
+                <td style="padding:12px; border:1px solid #dbe4ea;">
+                    Planned Versions
+                </td>
+
+                <td style="padding:12px; border:1px solid #dbe4ea;">
+                    Evolutionary Development
+                </td>
+
+                <td style="padding:12px; border:1px solid #dbe4ea;">
+                    Subsystems evolve independently over time.
+                </td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+    <hr style="margin:25px 0; border:1px solid #e2e8f0;">
+
+    <h4>🏗 Proposed SoS Strategy</h4>
+
+    <div class="grid">
+
+        <div class="card">
+
+            <h4>Standardized Interfaces</h4>
+
+            <p>
+                Strong APIs and standardized data exchange mechanisms
+                allow independent systems
+                to communicate effectively
+                without rewriting the original systems.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h4>Adaptability</h4>
+
+            <p>
+                The SoS architecture must tolerate unexpected updates
+                because component systems evolve independently
+                on different schedules.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h4>Governance Model</h4>
+
+            <p>
+                Collaboration agreements between departments
+                are more effective than forcing centralized technical control.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h4>Resilience</h4>
+
+            <p>
+                The architecture must continue functioning
+                even when individual systems fail,
+                disconnect,
+                or become temporarily unavailable.
+            </p>
+
+        </div>
+
+    </div>
+
+    <hr style="margin:25px 0; border:1px solid #e2e8f0;">
+
+    <h4>📘 Learning Outcome</h4>
+
+    <p>
+        This task helped me understand that Systems of Systems engineering
+        focuses heavily on integration,
+        coordination,
+        and managing relationships between independent systems
+        rather than developing entirely new software from scratch.
+    </p>
+
+    <h4>⚡ Challenges</h4>
+
+    <p>
+        One major challenge in SoS engineering
+        is handling emergent behavior,
+        where the combined system may produce unexpected issues
+        that do not appear in the individual subsystems alone.
+    </p>
+
+    <p>
+        Testing these environments is difficult
+        because recreating a complete real-world SoS
+        inside a testing laboratory is often impractical.
+    </p>
+
+    <h4>💡 Key Insight</h4>
+
+    <p>
+        In Systems of Systems,
+        engineers never have complete control over every subsystem.
+        Therefore,
+        the architecture must remain resilient
+        to independent updates,
+        failures,
+        and operational changes.
+    </p>
+
+    <h4>🌍 Real-World Connection</h4>
+
+    <p>
+        Smart city infrastructures,
+        emergency response systems,
+        intelligent traffic management,
+        and healthcare coordination platforms
+        all rely heavily on Systems of Systems engineering
+        to share data securely and reliably across independent organizations.
+    </p>
+
+</div>
+
+</div>
+
+<!-- WEEK 15-16 -->
+<div class="card evidence-card">
+
+    <span class="week-badge">WEEK 15–16</span>
+
+    <h3>FINAL REFLECTION · Portfolio Completion</h3>
+
+    <p class="topic">
+        Topics: Final Reflection, Portfolio Building, Engineering Understanding
+    </p>
+
+<div class="evidence-box">
+
+    <h4 style="color:#0f766e;">🎓 Final Reflection & Portfolio Completion</h4>
+
+    <p>
+        Completing this portfolio allowed me to reflect on how much my understanding
+        of Software Engineering evolved throughout the semester.
+        At the beginning of the course,
+        I mostly viewed software development as writing code and solving technical problems.
+        However, this course showed me that engineering dependable systems
+        requires much deeper thinking about safety, reliability, security,
+        scalability, and real-world risks.
+    </p>
+
+    <p>
+        One of the most valuable lessons I learned
+        was that failures are unavoidable in complex systems.
+        The real challenge for software engineers
+        is designing systems that can tolerate failures,
+        recover safely,
+        and continue operating without causing harm to users.
+    </p>
+
+    <hr style="margin:25px 0; border:1px solid #e2e8f0;">
+
+    <h4>📚 What I Learned Throughout the Course</h4>
+
+    <div class="grid">
+
+        <div class="card">
+
+            <h4>Dependability Engineering</h4>
+
+            <p>
+                I learned how availability,
+                reliability,
+                safety,
+                security,
+                maintainability,
+                and integrity work together
+                to build trustworthy systems.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h4>Safety & Risk Analysis</h4>
+
+            <p>
+                I developed a better understanding
+                of hazard analysis,
+                safety requirements,
+                and how engineers reduce risks
+                in safety-critical systems.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h4>Distributed & Large-Scale Systems</h4>
+
+            <p>
+                I learned how modern applications
+                are designed using distributed architectures,
+                reusable components,
+                and cloud-based systems.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h4>Engineering Mindset</h4>
+
+            <p>
+                This course helped me think more like an engineer,
+                focusing on system behavior,
+                failure handling,
+                long-term maintainability,
+                and real-world impact.
+            </p>
+
+        </div>
+
+    </div>
+
+    <hr style="margin:25px 0; border:1px solid #e2e8f0;">
+
+    <h4>⚡ Biggest Challenges</h4>
+
+    <p>
+        One challenge I faced was understanding
+        how different engineering concepts connect together,
+        especially the relationship between reliability,
+        safety,
+        resilience,
+        and distributed systems.
+    </p>
+
+    <p>
+        Another challenge was shifting my mindset
+        from simply creating software
+        to analyzing how systems behave under failures,
+        cyberattacks,
+        overload,
+        and unexpected real-world situations.
+    </p>
+
+    <hr style="margin:25px 0; border:1px solid #e2e8f0;">
+
+    <h4>💡 Personal Growth</h4>
+
+    <p>
+        Throughout this course,
+        I improved my ability to analyze systems critically,
+        organize technical ideas,
+        and connect theoretical concepts
+        with real-world software applications.
+    </p>
+
+    <p>
+        Building this portfolio also improved my documentation,
+        reflection,
+        and presentation skills,
+        while helping me track my own learning progress week by week.
+    </p>
+
+    <hr style="margin:25px 0; border:1px solid #e2e8f0;">
+
+    <h4>🌍 Real-World Perspective</h4>
+
+    <p>
+        This course showed me that software engineering
+        affects important parts of everyday life,
+        including healthcare,
+        banking,
+        transportation,
+        emergency response systems,
+        and smart city infrastructure.
+    </p>
+
+    <p>
+        Understanding how these systems are designed
+        made me appreciate the responsibility engineers carry
+        when developing software used by millions of people.
+    </p>
+
+    <hr style="margin:25px 0; border:1px solid #e2e8f0;">
+
+    <h4>🚀 Final Thoughts</h4>
+
+    <p>
+        By the end of this semester,
+        I gained a much stronger understanding
+        of Software Engineering principles
+        and developed a deeper appreciation
+        for dependable system design.
+    </p>
+
+    <p>
+        This portfolio represents not only the topics I studied,
+        but also my growth as an Information Technology student
+        learning how real-world software systems are engineered,
+        maintained,
+        and trusted by society.
+    </p>
+
+</div>
+
+</div>
+</section>
+
+<section id="reflection">
+
+    <h2>🧠 Reflection</h2>
+
+    <div class="reflection-card">
+
+        <h4>📘 Initial Understanding</h4>
+
+        <blockquote>
+
+            <p>
+                I wanted to understand the similarities and differences between
+                dependability and reliability. Before this course,
+                I thought reliability only meant preventing system crashes,
+                but I later realized Software Engineering includes deeper concepts
+                related to safety, risks, and system behavior.
+            </p>
+
+        </blockquote>
+
+    </div>
+
+    <div class="reflection-card">
+
+        <h4>🎓 Expectations from the Course</h4>
+
+        <blockquote>
+
+            <p>
+                I wanted to learn how real-world software systems are engineered
+                instead of simply programmed. I was interested in understanding
+                how large systems such as banking applications are structured,
+                and how engineers reduce crashes and dangerous system errors.
+            </p>
+
+        </blockquote>
+
+    </div>
+
+</section>
+
+<section id="tools-used">
+
+    <h2>🛠 Tools Used</h2>
+
+    <p>
+        The following tools and resources helped me build and organize this portfolio:
+    </p>
+
+    <div class="grid">
+
+        <div class="card"><h3>Github</h3></div>
+        <div class="card"><h3>ChatGPT.com</h3></div>
+        <div class="card"><h3>gemini.google.com</h3></div>
+        <div class="card"><h3>Google.com</h3></div>
+        <div class="card"><h3>Wikipedia</h3></div>
+        <div class="card"><h3>The Course Slides</h3></div>
+        <div class="card"><h3>Dr. Adeeb’s Notes</h3></div>
+
+    </div>
+
+</section>
+
+<section id="contact">
+
+    <h2>🤝 Contact</h2>
+
+    <p>
+        Build Your Network. Build Your Future.
+    </p>
+
+    <div class="grid">
+
+        <!-- GitHub Card -->
+        <a href="https://github.com/Hollow009"
+           target="_blank"
+           class="contact-card">
+
+            <div class="card">
+
+                <h3>💻 GitHub</h3>
+
+                <p>
+                    View my projects and repositories.
+                </p>
+
+            </div>
+
+        </a>
+
+        <!-- Email Card -->
+        <a href="mailto:ahmoudalahmadi@stu.kau.edu.sa"
+           class="contact-card">
+
+            <div class="card">
+
+                <h3>✉️ Email</h3>
+
+                <p>
+                    Contact me through email.
+                </p>
+
+            </div>
+
+        </a>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <div class="himma-badge">
+        HIMMA | BUILD YOUR PROOF
+    </div>
+
+    <p>
+        © 2026 — CPIT-455 Portfolio
+    </p>
+
+    <p>
+        Faculty of Computing and Information Technology
+    </p>
+
+    <div style="margin-top:20px;font-size:0.9rem;">
+        <p>
+            📚 Software Engineering
+        </p>
+
+        <p>
+            🏛 Department of Information Technology · 2026
+        </p>
+    </div>
+
+</footer>
+
+</body>
+</html>
